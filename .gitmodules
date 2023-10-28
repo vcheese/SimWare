@@ -1,0 +1,3 @@
+[submodule "SimWare/vendor/spdlog"]
+	path = SimWare/vendor/spdlog
+	url = https://github.com/gabime/spdlog
