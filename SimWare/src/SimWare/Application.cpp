@@ -1,13 +1,17 @@
 #include "Application.h"
 
-SimWare::Application::Application()
-{
-}
+namespace SimWare {
 
-SimWare::Application::~Application()
-{
-}
+    Application::Application()
+    {
+    }
 
-void SimWare::Application::Run()
-{
+    Application::~Application()
+    {
+    }
+
+    void Application::Run()
+    {
+    }
+
 }
