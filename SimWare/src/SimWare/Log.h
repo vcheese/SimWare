@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace SimWare {
 
@@ -21,6 +22,7 @@ namespace SimWare {
 }
 
 // Core logs
+#ifndef NDEBUG
 #define SW_CORE_TRACE(...)  ::SimWare::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define SW_CORE_INFO(...)   ::SimWare::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define SW_CORE_WARN(...)   ::SimWare::Log::GetCoreLogger()->warn(__VA_ARGS__)
@@ -33,3 +35,17 @@ namespace SimWare {
 #define SW_WARN(...)        ::SimWare::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define SW_ERROR(...)       ::SimWare::Log::GetClientLogger()->error(__VA_ARGS__)
 #define SW_fatal(...)       ::SimWare::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#else
+#define SW_CORE_TRACE(...)
+#define SW_CORE_INFO(...)
+#define SW_CORE_WARN(...)
+#define SW_CORE_ERROR(...)
+#define SW_CORE_fatal(...)
+
+// Client logs
+#define SW_TRACE(...)
+#define SW_INFO(...)
+#define SW_WARN(...)
+#define SW_ERROR(...)
+#define SW_fatal(...)
+#endif
